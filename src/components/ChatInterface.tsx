@@ -70,14 +70,11 @@ export default function ChatInterface() {
           rewritten_query: res.rewritten_query,
         },
       ]);
-    } catch {
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : 'Unknown error';
       setMessages((prev) => [
         ...prev,
-        {
-          role: 'assistant',
-          content:
-            'Error: Could not reach the server. Make sure the backend is running.',
-        },
+        { role: 'assistant', content: `Error: ${msg}` },
       ]);
     } finally {
       setLoading(false);
