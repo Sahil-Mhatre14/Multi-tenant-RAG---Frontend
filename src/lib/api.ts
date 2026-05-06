@@ -9,6 +9,9 @@ import type {
   IngestURLResponse,
   BatchIngestRequest,
   BatchIngestResponse,
+  CreateDepartmentRequest,
+  CreateDepartmentResponse,
+  UpdateDepartmentRequest,
 } from '@/types';
 
 const BASE_URL =
@@ -78,4 +81,24 @@ export const api = {
       body: form,
     });
   },
+
+  // ─── Admin ───────────────────────────────────────────────────────────
+  createDepartment: (body: CreateDepartmentRequest) =>
+    request<CreateDepartmentResponse>('/api/v1/admin/departments', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    }),
+
+  updateDepartment: (deptId: string, body: UpdateDepartmentRequest) =>
+    request<CreateDepartmentResponse>(`/api/v1/admin/departments/${deptId}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    }),
+
+  deleteDepartment: (deptId: string) =>
+    request<{ dept_id: string; message: string }>(`/api/v1/admin/departments/${deptId}`, {
+      method: 'DELETE',
+    }),
 };

@@ -1,4 +1,4 @@
-// File: /Users/spartan/Desktop/RAG Engine Frontend/src/app/chat/page.tsx
+// File: /Users/spartan/Desktop/Multi Tenant RAG/RAG Engine Frontend/src/app/chat/page.tsx
 import * as entry from '../../../../src/app/chat/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

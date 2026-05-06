@@ -61,6 +61,22 @@ export default function DashboardPage() {
             <p className="text-xs text-sjsu-gray mt-1">Manage files →</p>
           </Link>
         ))}
+
+        {/* Add Department card */}
+        <Link
+          href="/dashboard/add-department"
+          className="bg-white rounded-xl border-2 border-dashed border-gray-200 hover:border-sjsu-blue hover:shadow-md transition-all p-6 group flex flex-col items-center justify-center text-center"
+        >
+          <div className="w-10 h-10 rounded-lg bg-gray-100 group-hover:bg-sjsu-blue-muted flex items-center justify-center mb-4 transition-colors">
+            <span className="text-gray-400 group-hover:text-sjsu-blue text-2xl leading-none font-light transition-colors">
+              +
+            </span>
+          </div>
+          <h2 className="font-semibold text-gray-400 group-hover:text-sjsu-blue transition-colors">
+            Add Department
+          </h2>
+          <p className="text-xs text-gray-400 mt-1">Provision a new corpus →</p>
+        </Link>
       </div>
     </div>
   );

@@ -35,12 +35,20 @@ export default function DeptDashboardPage({
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-8">
-      <Link
-        href="/dashboard"
-        className="text-sm text-sjsu-blue hover:underline mb-4 inline-block"
-      >
-        ← Back to Dashboard
-      </Link>
+      <div className="flex items-center justify-between mb-4">
+        <Link
+          href="/dashboard"
+          className="text-sm text-sjsu-blue hover:underline"
+        >
+          ← Back to Dashboard
+        </Link>
+        <Link
+          href={`/dashboard/${deptId}/edit`}
+          className="text-sm text-gray-400 hover:text-sjsu-blue transition-colors"
+        >
+          Edit Department
+        </Link>
+      </div>
 
       {/* Page header with gold accent */}
       <div className="flex items-center gap-3 mb-1">

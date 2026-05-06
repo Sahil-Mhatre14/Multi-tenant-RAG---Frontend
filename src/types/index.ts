@@ -1,6 +1,7 @@
 export interface DepartmentInfo {
   dept_id: string;
   display_name: string;
+  fallback_message: string;
 }
 
 export interface DepartmentsResponse {
@@ -78,4 +79,21 @@ export interface Message {
   role: 'user' | 'assistant';
   content: string;
   rewritten_query?: string;
+}
+
+export interface CreateDepartmentRequest {
+  dept_id: string;
+  display_name: string;
+  fallback_message?: string;
+}
+
+export interface UpdateDepartmentRequest {
+  display_name?: string;
+  fallback_message?: string;
+}
+
+export interface CreateDepartmentResponse {
+  dept_id: string;
+  display_name: string;
+  corpus_name: string;
 }
